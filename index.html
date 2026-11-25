@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071426">
+
+<title>Harry Tour and Travel</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#06101e;
+  color:#fff;
+}
+
+.hero{
+  min-height:100vh;
+  padding:24px 14px 45px;
+  position:relative;
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      rgba(3,12,24,.42),
+      rgba(3,12,24,.88)
+    ),
+    url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=90")
+    center/cover fixed;
+}
+
+/* GOLD LIGHT */
+.hero:before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  right:-180px;
+  top:-180px;
+  background:rgba(255,190,30,.14);
+  filter:blur(80px);
+  border-radius:50%;
+}
+
+/* HEADER */
+.header{
+  position:relative;
+  z-index:2;
+  max-width:1100px;
+  margin:auto;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  font-size:clamp(28px,7vw,52px);
+  font-weight:900;
+  line-height:.9;
+
+  background:linear-gradient(
+    135deg,
+    #fff,
+    #ffd84d,
+    #fff
+  );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+
+  text-shadow:0 8px 30px rgba(255,193,7,.18);
+}
+
+.logo span{
+  display:block;
+  font-size:.42em;
+  margin-top:9px;
+  letter-spacing:2px;
+}
+
+.phone{
+  text-decoration:none;
+  color:#111;
+  background:linear-gradient(135deg,#fff1a8,#ffc400,#ffe77a);
+  padding:12px 18px;
+  border-radius:40px;
+  font-weight:900;
+  white-space:nowrap;
+  box-shadow:0 8px 30px rgba(255,190,0,.25);
+}
+
+/* TAGLINE */
+.tagline{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  margin:32px auto 18px;
+}
+
+.tagline h2{
+  font-size:clamp(26px,7vw,52px);
+  font-style:italic;
+  color:#ffd329;
+  text-shadow:0 5px 25px rgba(0,0,0,.5);
+}
+
+.tagline p{
+  margin-top:8px;
+  color:#fff;
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+/* CARS */
+.cars{
+  position:relative;
+  z-index:2;
+  max-width:1100px;
+  margin:20px auto 35px;
+
+  display:grid;
+  grid-template-columns:1fr 1.35fr 1fr;
+  align-items:end;
+  gap:12px;
+}
+
+.car{
+  text-align:center;
+  padding:12px;
+  border:1px solid rgba(255,205,55,.35);
+  border-radius:22px;
+
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.13),
+    rgba(255,255,255,.04)
+  );
+
+  backdrop-filter:blur(8px);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.3),
+    inset 0 0 20px rgba(255,200,40,.04);
+}
+
+.car.main{
+  transform:scale(1.05);
+  border-color:#ffd329;
+}
+
+.car img{
+  width:100%;
+  height:145px;
+  object-fit:contain;
+  display:block;
+  filter:drop-shadow(0 15px 12px rgba(0,0,0,.6));
+}
+
+.car.main img{
+  height:185px;
+}
+
+.car h3{
+  color:#ffd329;
+  font-size:16px;
+  margin-top:5px;
+}
+
+/* FEATURES */
+.features{
+  position:relative;
+  z-index:2;
+  max-width:1000px;
+  margin:0 auto 25px;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+
+.feature{
+  padding:14px 8px;
+  text-align:center;
+
+  border:1px solid rgba(255,210,50,.35);
+  border-radius:16px;
+
+  background:rgba(0,0,0,.35);
+}
+
+.feature-icon{
+  font-size:25px;
+  margin-bottom:5px;
+}
+
+.feature b{
+  display:block;
+  font-size:12px;
+}
+
+.feature small{
+  color:#cfd5dc;
+  font-size:10px;
+}
+
+/* FORM */
+.form-box{
+  position:relative;
+  z-index:3;
+
+  width:min(100%,620px);
+  margin:auto;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff,
+      #eef2f5
+    );
+
+  color:#101827;
+
+  border-radius:28px;
+  padding:25px 20px;
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.55),
+    0 0 0 2px rgba(255,205,45,.65);
+}
+
+.form-title{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.form-title h2{
+  display:inline-block;
+  padding:12px 30px;
+  border-radius:40px;
+
+  background:linear-gradient(
+    135deg,
+    #fff0a0,
+    #ffc400,
+    #ffe27a
+  );
+
+  font-size:25px;
+}
+
+.form-title p{
+  margin-top:10px;
+  color:#59616b;
+  font-size:13px;
+}
+
+.form{
+  display:grid;
+  gap:12px;
+}
+
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+label{
+  display:block;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:5px;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  border:1px solid #cfd5dc;
+  background:#fff;
+
+  border-radius:13px;
+  padding:14px;
+
+  font-size:15px;
+  outline:none;
+
+  transition:.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:#e6b400;
+  box-shadow:0 0 0 3px rgba(230,180,0,.13);
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.whatsapp{
+  border:0;
+  border-radius:50px;
+
+  padding:16px;
+  margin-top:4px;
+
+  background:linear-gradient(
+    135deg,
+    #0fae45,
+    #20d866,
+    #0b9d3b
+  );
+
+  color:white;
+  font-size:17px;
+  font-weight:900;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 10px 25px rgba(15,174,69,.3);
+}
+
+.whatsapp:active{
+  transform:scale(.98);
+}
+
+.note{
+  text-align:center;
+  color:#777;
+  font-size:10px;
+}
+
+/* FOOTER */
+.footer{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:35px 10px 10px;
+}
+
+.footer h3{
+  color:#ffd329;
+  font-size:23px;
+  font-style:italic;
+}
+
+.footer p{
+  color:#bfc7d0;
+  font-size:12px;
+  margin-top:8px;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+  .hero{
+    padding:18px 10px 35px;
+    background-attachment:scroll;
+  }
+
+  .header{
+    flex-direction:column;
+  }
+
+  .logo{
+    text-align:center;
+  }
+
+  .phone{
+    font-size:14px;
+    padding:10px 16px;
+  }
+
+  .tagline{
+    margin-top:25px;
+  }
+
+  .cars{
+    grid-template-columns:.85fr 1.15fr .85fr;
+    gap:5px;
+  }
+
+  .car{
+    padding:6px;
+    border-radius:14px;
+  }
+
+  .car img{
+    height:82px;
+  }
+
+  .car.main img{
+    height:112px;
+  }
+
+  .car h3{
+    font-size:10px;
+  }
+
+  .features{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .form-box{
+    padding:20px 15px;
+    border-radius:22px;
+  }
+
+  .row{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .form-title h2{
+    font-size:21px;
+    padding:11px 24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <div class="logo">
+      Harry
+      <span>TOUR AND TRAVEL</span>
+    </div>
+
+    <a class="phone" href="tel:+917888942866">
+      📞 78889 42866
+    </a>
+
+  </header>
+
+  <!-- TAGLINE -->
+  <div class="tagline">
+
+    <h2>
+      Travel More... Explore More...
+    </h2>
+
+    <p>
+      Comfortable • Reliable • Professional Travel Service
+    </p>
+
+  </div>
+
+  <!-- CARS -->
+  <div class="cars">
+
+    <!-- DZIRE LEFT -->
+    <div class="car">
+
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Maruti_Suzuki_Dzire_2017.jpg/800px-Maruti_Suzuki_Dzire_2017.jpg"
+        alt="Dzire"
+      >
+
+      <h3>Dzire</h3>
+
+    </div>
+
+    <!-- ERTIGA CENTER -->
+    <div class="car main">
+
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Maruti_Suzuki_Ertiga_2018.jpg/900px-Maruti_Suzuki_Ertiga_2018.jpg"
+        alt="Ertiga"
+      >
+
+      <h3>Ertiga • Family Travel</h3>
+
+    </div>
+
+    <!-- DZIRE RIGHT -->
+    <div class="car">
+
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Maruti_Suzuki_Dzire_2017.jpg/800px-Maruti_Suzuki_Dzire_2017.jpg"
+        alt="Dzire"
+      >
+
+      <h3>Dzire</h3>
+
+    </div>
+
+  </div>
+
+  <!-- FEATURES -->
+  <div class="features">
+
+    <div class="feature">
+      <div class="feature-icon">🛡️</div>
+      <b>Safe & Secure</b>
+      <small>Journey</small>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🚗</div>
+      <b>Well Maintained</b>
+      <small>Vehicles</small>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">👨‍✈️</div>
+      <b>Experienced</b>
+      <small>Drivers</small>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🕐</div>
+      <b>24/7 Support</b>
+      <small>Available</small>
+    </div>
+
+  </div>
+
+  <!-- FORM -->
+  <div class="form-box">
+
+    <div class="form-title">
+
+      <h2>Plan Your Trip</h2>
+
+      <p>
+        Fill your details and send your enquiry directly on WhatsApp
+      </p>
+
+    </div>
+
+    <form class="form" id="tripForm">
+
+      <div class="row">
+
+        <div>
+          <label>Customer Name</label>
+
+          <input
+            id="name"
+            type="text"
+            placeholder="Enter your name"
+            required
+          >
+        </div>
+
+        <div>
+          <label>Mobile Number</label>
+
+          <input
+            id="phone"
+            type="tel"
+            inputmode="numeric"
+            placeholder="Enter mobile number"
+            required
+          >
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div>
+          <label>Pickup Location</label>
+
+          <input
+            id="pickup"
+            type="text"
+            placeholder="Pickup city/place"
+            required
+          >
+        </div>
+
+        <div>
+          <label>Drop Location</label>
+
+          <input
+            id="drop"
+            type="text"
+            placeholder="Drop city/place"
+            required
+          >
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div>
+          <label>Travel Date</label>
+
+          <input
+            id="date"
+            type="date"
+            required
+          >
+        </div>
+
+        <div>
+          <label>Select Vehicle</label>
+
+          <select id="vehicle" required>
+
+            <option value="">
+              Select vehicle
+            </option>
+
+            <option value="Ertiga">
+              Ertiga
+            </option>
+
+            <option value="Dzire">
+              Dzire
+            </option>
+
+            <option value="Other">
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+      <div>
+
+        <label>
+          Additional Requirement
+        </label>
+
+        <textarea
+          id="message"
+          placeholder="Tell us anything else about your trip"
+        ></textarea>
+
+      </div>
+
+      <button
+        class="whatsapp"
+        type="submit"
+      >
+        🟢 Send Enquiry on WhatsApp
+      </button>
+
+      <div class="note">
+        Your enquiry will open directly in WhatsApp.
+      </div>
+
+    </form>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <h3>
+      Your Journey, Our Priority
+    </h3>
+
+    <p>
+      Harry Tour and Travel • 78889 42866
+    </p>
+
+  </footer>
+
+</section>
+
+<script>
+
+document
+.getElementById("tripForm")
+.addEventListener("submit", function(event){
+
+  event.preventDefault();
+
+  const name =
+    document.getElementById("name").value.trim();
+
+  const phone =
+    document.getElementById("phone").value.trim();
+
+  const pickup =
+    document.getElementById("pickup").value.trim();
+
+  const drop =
+    document.getElementById("drop").value.trim();
+
+  const date =
+    document.getElementById("date").value;
+
+  const vehicle =
+    document.getElementById("vehicle").value;
+
+  const message =
+    document.getElementById("message").value.trim();
+
+  /*
+    Harry Tour and Travel WhatsApp number
+    Country code: India +91
+  */
+  const whatsappNumber = "917888942866";
+
+  const whatsappMessage =
+
+`🚗 *Harry Tour and Travel - New Enquiry*
+
+*Customer Name:* ${name}
+*Mobile:* ${phone}
+*Pickup:* ${pickup}
+*Drop:* ${drop}
+*Travel Date:* ${date}
+*Vehicle:* ${vehicle}
+*Additional Requirement:* ${message || "None"}
+
+Thank you.`;
+
+  const whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(whatsappMessage);
+
+  window.location.href = whatsappURL;
+
+});
+
+</script>
+
+</body>
+</html>
