@@ -1,67 +1,203 @@
 <!DOCTYPE html>
-<html lang="pa">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harry Tour & Travels | Chandigarh to Himachal Adventure Trips</title>
+<title>Harry Tour & Travels | Best Tour Packages in Kharar, Chandigarh</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
-body{background:#f8f9fa;color:#222}
-header{background:#0f172a;color:#fff;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
-.logo{font-size:24px;font-weight:900}.logo span{color:#facc15}
-nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:600}
-.hero{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600');background-size:cover;background-position:center;height:520px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:20px}
-.hero h1{font-size:48px;line-height:1.1}.hero h1 span{color:#facc15}
-.hero p{font-size:19px;margin:15px 0 25px;max-width:650px}
-.btn{background:#facc15;color:#000;padding:14px 28px;border-radius:30px;font-weight:800;text-decoration:none;font-size:17px;display:inline-block}
-.btn2{background:#25D366;color:#fff;padding:14px 28px;border-radius:30px;font-weight:800;text-decoration:none;font-size:17px;display:inline-block;margin-left:10px}
-.section{padding:50px 5%}
-.section h2{text-align:center;font-size:32px;margin-bottom:8px}
-.section p.sub{text-align:center;color:#666;margin-bottom:30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.1)}
-.card img{width:100%;height:200px;object-fit:cover}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+:root{--yellow:#FFC800;--dark:#0F172A;--green:#25D366;--blue:#2563EB}
+body{background:#F8FAFC;color:#1E293B}
+a{text-decoration:none}
+/* HEADER */
+header{background:#0F172A;color:#fff;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 4px 15px rgba(0,0,0,.2)}
+.logo{font-size:22px;font-weight:900;line-height:1}.logo span{color:var(--yellow);font-size:13px;letter-spacing:2px;display:block}
+header nav a{color:#fff;margin-left:18px;font-size:14px;font-weight:600}
+.call-btn{background:var(--yellow);color:#000;padding:9px 16px;border-radius:30px;font-weight:800;font-size:13px}
+/* HERO */
+.hero{background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600');background-size:cover;background-position:center;min-height:580px;display:flex;align-items:center;padding:40px 5%;color:#fff}
+.hero-box{max-width:650px}
+.badge{background:var(--yellow);color:#000;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:800;display:inline-block}
+.hero h1{font-size:48px;line-height:1.05;margin:15px 0}.hero h1 span{color:var(--yellow)}
+.hero p{font-size:16px;opacity:.9;line-height:1.6}
+.hero-btns{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+.btn-y{background:var(--yellow);color:#000;padding:14px 24px;border-radius:30px;font-weight:800}
+.btn-w{background:var(--green);color:#fff;padding:14px 24px;border-radius:30px;font-weight:800}
+.trust{margin-top:22px;display:flex;gap:18px;font-size:13px;font-weight:600;flex-wrap:wrap}
+/* SEARCH BOX - MAIN */
+.booking-card{background:#fff;border-radius:20px;padding:22px;box-shadow:0 15px 40px rgba(0,0,0,.15);margin:-70px 5% 0;position:relative;z-index:10}
+.booking-card h2{font-size:22px;margin-bottom:4px}.booking-card p{font-size:13px;color:#64748B;margin-bottom:16px}
+.grid-form{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px}
+.grid-form input,.grid-form select,.grid-form textarea{width:100%;padding:13px;border:1.5px solid #E2E8F0;border-radius:12px;font-size:14px;outline:none;background:#F8FAFC}
+.grid-form input:focus,.grid-form select:focus{border-color:var(--blue)}
+.full{grid-column:span 2}
+.book-btn{grid-column:span 4;background:var(--green);color:#fff;border:none;padding:15px;border-radius:12px;font-size:17px;font-weight:800;cursor:pointer}
+.book-btn:hover{background:#1da851}
+.small-note{text-align:center;font-size:12px;color:#64748B;margin-top:10px}
+/* TRIPS */
+.section{padding:55px 5%}
+.sec-title{text-align:center;font-size:32px;font-weight:900}.sec-sub{text-align:center;color:#64748B;margin:8px 0 28px}
+.trips{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.08);position:relative;transition:.3s}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;height:210px;object-fit:cover}
+.discount{position:absolute;top:12px;left:12px;background:#EF4444;color:#fff;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:800}
 .card-body{padding:18px}
-.card-body h3{font-size:21px}
-.price{color:#16a34a;font-weight:800;font-size:19px;margin:8px 0}
-.card-body ul{margin:10px 0 15px 18px;color:#555;font-size:14px}
-.tag{background:#fef3c7;color:#92400e;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700}
-.form-box{background:#fff;max-width:600px;margin:0 auto;padding:30px;border-radius:16px;box-shadow:0 5px 20px rgba(0,0,0,.1)}
-.form-box input,.form-box select,.form-box textarea{width:100%;padding:13px;margin:8px 0;border:1px solid #ddd;border-radius:10px;font-size:15px}
-.form-box button{width:100%;background:#0f172a;color:#fff;padding:14px;border:none;border-radius:10px;font-size:17px;font-weight:800;cursor:pointer}
-.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;text-align:center}
-.why div{background:#fff;padding:20px;border-radius:14px}
-footer{background:#0f172a;color:#fff;text-align:center;padding:25px}
-.float{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 20px;border-radius:50px;font-weight:800;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,.3);z-index:999}
-@media(max-width:600px){.hero h1{font-size:32px}nav{display:none}}
+.card-body h3{font-size:19px}
+.card-body .meta{font-size:13px;color:#64748B;margin:6px 0}
+.card-body ul{margin:10px 0 12px 18px;font-size:13px;color:#475569;line-height:1.7}
+.price{font-size:20px;font-weight:900;color:#16A34A}.price del{font-size:13px;color:#94A3B8;font-weight:400}
+.card-btn{display:flex;gap:8px;margin-top:12px}
+.card-btn a{flex:1;text-align:center;padding:11px;border-radius:10px;font-weight:700;font-size:14px}
+.btn-dark{background:var(--dark);color:#fff}.btn-green{background:var(--green);color:#fff}
+/* WHY */
+.why{background:#0F172A;color:#fff;border-radius:22px;padding:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;text-align:center}
+.why h3{font-size:20px;margin-bottom:6px}.why p{font-size:13px;opacity:.8}
+/* REVIEW */
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.rev{background:#fff;padding:20px;border-radius:16px;box-shadow:0 5px 15px rgba(0,0,0,.06)}
+.rev b{color:#F59E0B}
+/* FOOTER */
+footer{background:#0F172A;color:#fff;text-align:center;padding:30px 5%}
+.float{position:fixed;bottom:18px;right:18px;background:var(--green);color:#fff;padding:14px 20px;border-radius:50px;font-weight:800;box-shadow:0 8px 20px rgba(0,0,0,.3);z-index:999;font-size:15px}
+.call-float{position:fixed;bottom:18px;left:18px;background:var(--yellow);color:#000;padding:14px 20px;border-radius:50px;font-weight:800;box-shadow:0 8px 20px rgba(0,0,0,.3);z-index:999;font-size:15px}
+@media(max-width:700px){.hero h1{font-size:34px}.grid-form{grid-template-columns:1fr 1fr}.full,.book-btn{grid-column:span 2}header nav{display:none}.booking-card{margin:-50px 4% 0}}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">HARRY <span>TOUR & TRAVELS</span></div>
-  <nav><a href="#trips">Trips</a><a href="#booking">Booking</a><a href="#contact">Contact</a></nav>
+  <div class="logo">HARRY<br><span>TOUR & TRAVELS</span></div>
+  <nav><a href="#trips">Packages</a><a href="#booking">Booking</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></nav>
+  <a class="call-btn" href="tel:+917888942866">📞 78889 42866</a>
 </header>
 
 <div class="hero">
-  <h1>Chandigarh To <span>Adventure</span><br>Chalo Ghumman!</h1>
-  <p>Bir Billing Paragliding • Rishikesh Rafting • Manali Snow • Kasol Trek • Sab to Sasta Package, Full Masti Guarantee!</p>
-  <div>
-    <a class="btn" href="#trips">🔥 Trips Dekho</a>
-    <a class="btn2" href="https://wa.me/919999999999?text=Hi Harry, Mujhe Trip Book Karni Hai">WhatsApp Karo</a>
+  <div class="hero-box">
+    <span class="badge">🔥 KHARAR • CHANDIGARH • MOHALI - SAB TO TRUSTED</span>
+    <h1>Chandigarh To<br><span>Adventure</span> Chalo<br>Ghumman!</h1>
+    <p>Bir Billing Paragliding, Rishikesh Rafting, Manali Snow, Kasol Trek - Sab to Sasta Package. Bus + Hotel + Food Sab Included. Ek Call Te Booking Done!</p>
+    <div class="hero-btns">
+      <a class="btn-y" href="#booking">👉 Booking Karo</a>
+      <a class="btn-w" href="https://wa.me/917888942866?text=Hi%20Harry!%20Mujhe%20Trip%20Book%20Karni%20Hai">💬 WhatsApp Karo</a>
+    </div>
+    <div class="trust"><span>⭐ 4.9/5 Rating</span><span>✅ 5000+ Happy Travellers</span><span>💰 No Hidden Charges</span></div>
   </div>
-  <p style="margin-top:15px;font-size:14px">⭐ 4.9 Rating | 5000+ Happy Travellers | Kharar / Chandigarh</p>
 </div>
 
-<div class="section" id="trips">
-  <h2>🔥 Trending Adventure Trips</h2>
-  <p class="sub">Chandigarh to Chandigarh - Bus + Hotel + Food + Guide Sab Included</p>
-  <div class="grid">
+<!-- BOOKING FORM - MAIN -->
+<div class="booking-card" id="booking">
+  <h2>📝 Apni Trip Book Karo - 2 Minute Ch</h2>
+  <p>Details bharo, sidha Harry de WhatsApp <b>78889 42866</b> te pahunch jayegi. Assi 5 min ch call karange.</p>
+  <div class="grid-form">
+    <input type="text" id="name" placeholder="👤 Tuhada Poora Naam *">
+    <input type="tel" id="phone" placeholder="📱 Mobile Number *">
+    <input type="text" id="city" placeholder="📍 City - Eg: Kharar / Chandigarh">
+    <select id="trip">
+      <option value="Bir Billing Paragliding - ₹3,799">🪂 Bir Billing Paragliding - ₹3,799</option>
+      <option value="Rishikesh Rafting + Camping - ₹2,999">🌊 Rishikesh Rafting + Camping - ₹2,999</option>
+      <option value="Manali + Solang Snow - ₹7,999">❄️ Manali + Solang Snow - ₹7,999</option>
+      <option value="Kasol + Kheerganga Trek - ₹4,999">🏔️ Kasol + Kheerganga Trek - ₹4,999</option>
+      <option value="Morni Hills 1 Day - ₹999">🏞️ Morni Hills 1 Day - ₹999</option>
+      <option value="Amritsar + Wagah - ₹1,499">🙏 Amritsar + Wagah - ₹1,499</option>
+      <option value="Custom Trip">✨ Custom Trip - Apni Jagah</option>
+    </select>
+    <input type="date" id="date">
+    <input type="number" id="persons" placeholder="👥 Kinne Bande? Eg: 4">
+    <select id="type">
+      <option value="Friends">👬 Dostan Naal</option>
+      <option value="Family">👨‍👩‍👧 Family Naal</option>
+      <option value="Couple">❤️ Couple</option>
+      <option value="Solo">🧍 Solo</option>
+    </select>
+    <select id="budget">
+      <option value="1000-3000">Budget: ₹1,000 - ₹3,000</option>
+      <option value="3000-6000">Budget: ₹3,000 - ₹6,000</option>
+      <option value="6000-10000">Budget: ₹6,000 - ₹10,000</option>
+      <option value="10000+">Budget: ₹10,000+</option>
+    </select>
+    <textarea id="msg" class="full" rows="2" placeholder="💬 Koi Special Demand? Eg: Couple Room, Veg Khana, Date Confirm..."></textarea>
+    <button class="book-btn" onclick="sendBooking()">✅ WhatsApp Te Booking Bhejo → 78889 42866</button>
+  </div>
+  <p class="small-note">🔒 Tuhadi details sirf Harry kol jayegi, kise hor nu nahi. | 📞 Direct Call: <a href="tel:+917888942866">78889 42866</a></p>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800" alt="Bir Billing">
-      <div class="card-body">
-        <span class="tag">BEST SELLER</span>
-        <h3>🪂 Bir Billing Paragliding</h3>
-        <div class="price">₹3,799 / Person <del style="color:#999;font-size:14px">₹5,499</del></div>
-        <ul><li>2 Din / 1 Raat</li><li>Paragliding + Barot Valley</li><li>Volvo Bus + Hotel
+<!-- TRIPS -->
+<div class="section" id="trips">
+  <h2 class="sec-title">🔥 Trending Packages</h2>
+  <p class="sec-sub">Chandigarh to Chandigarh - Sab Kuch Included</p>
+  <div class="trips">
+
+    <div class="card"><span class="discount">31% OFF</span><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800"><div class="card-body"><h3>🪂 Bir Billing Paragliding</h3><div class="meta">📅 2 Din / 1 Raat • 🚌 Volvo Bus</div><ul><li>World 2nd Highest Paragliding Site</li><li>Barot Valley + Monastery Visit</li><li>Hotel + Breakfast Included</li></ul><div class="price">₹3,799 <del>₹5,499</del> <span style="font-size:12px;color:#64748B">/ person</span></div><div class="card-btn"><a class="btn-dark" href="#booking">Book Now</a><a class="btn-green" href="https://wa.me/917888942866?text=Hi%20Harry!%20Bir%20Billing%20Trip%20Book%20Karni%20Hai">WhatsApp</a></div></div></div>
+
+    <div class="card"><span class="discount">30% OFF</span><img src="https://images.unsplash.com/photo-1530866495561-507c9faab2ed?w=800"><div class="card-body"><h3>🌊 Rishikesh Rafting + Camping</h3><div class="meta">📅 2 Din / 1 Raat • 🏕️ Riverside Camp</div><ul><li>9km River Rafting (Grade 3-4)</li><li>Bonfire + DJ Night + Dinner</li><li>Bungee Jumping Option</li></ul><div class="price">₹2,999 <del>₹4,299</del> <span style="font-size:12px;color:#64748B">/ person</span></div><div class="card-btn"><a class="btn-dark" href="#booking">Book Now</a><a class="btn-green" href="https://wa.me/917888942866?text=Hi%20Harry!%20Rishikesh%20Trip%20Book%20Karni%20Hai">WhatsApp</a></div></div></div>
+
+    <div class="card"><span class="discount">27% OFF</span><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800"><div class="card-body"><h3>❄️ Manali + Solang Valley</h3><div class="meta">📅 3 Din / 2 Raat • ❄️ Snowfall Season</div><ul><li>Snow Point + Atal Tunnel + Solang</li><li>Paragliding + Zipline + ATV</li><li>Hotel + Breakfast + Dinner</li></ul><div class="price">₹7,999 <del>₹10,999</del> <span style="font-size:12px;color:#64748B">/ person</span></div><div class="card-btn"><a class="btn-dark" href="#booking">Book Now</a><a class="btn-green" href="https://wa.me/917888942866?text=Hi%20Harry!%20Manali%20Trip%20Book%20Karni%20Hai">WhatsApp</a></div></div></div>
+
+    <div class="card"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"><div class="card-body"><h3>🏔️ Kasol + Kheerganga Trek</h3><div class="meta">📅 3 Din / 2 Raat • 🥾 12km Trek</div><ul><li>Hot Water Spring + Parvati River</li><li>Camping + Guide + Bonfire</li><li>Tosh Village Visit</li></ul><div class="price">₹4,999 <span style="font-size:12px;color:#64748B">/ person</span></div><div class="card-btn"><a class="btn-dark" href="#booking">Book Now</a><a class="btn-green" href="https://wa.me/917888942866?text=Hi%20Harry!%20Kasol%20Trip%20Book%20Karni%20Hai">WhatsApp</a></div></div></div>
+
+    <div class="card"><span class="discount">1 DAY</span><img src="https://images.unsplash.com/photo-1573398643956-2b9e6ade3456?w=800"><div class="card-body"><h3>🏞️ Morni Hills - 1 Day</h3><div class="meta">📅 1 Din • Subah Jao Shaam Wapas</div><ul><li>Tikkar Taal + Boating + Trek</li><li>Lunch + Bus Included</li><li>Family Layi Best</li></ul><div class="price">₹999 <span style="font-size:12px;color:#64748B">/ person</span></div><div class="card-btn"><a class="btn-dark" href="#booking">Book Now</a><a class="btn-green" href="https://wa.me/917888942866?text=Hi%20Harry!%20Morni%20Trip%20Book%20Karni%20Hai">WhatsApp</a></div></div></div>
+
+    <div class="card"><img src="https://images.unsplash.com/photo-1583211892741-8f6b3b1d0a9e?w=800"><div class="card-body"><h3>🙏 Amritsar + Wagah Border</h3><div class="meta">📅 1 Din • 🚌 AC Bus</div><ul><li>Golden Temple + Jallianwala Bagh</li><li>Wagah Border Parade</li><li>Langar + Guide</li></ul><div class="price">₹1,499 <span style="font-size:12px;color:#64748B">/ person</span></div><div class="card-btn"><a class="btn-dark" href="#booking">Book Now</a><a class="btn-green" href="https://wa.me/917888942866?text=Hi%20Harry!%20Amritsar%20Trip%20Book%20Karni%20Hai">WhatsApp</a></div></div></div>
+
+  </div>
+</div>
+
+<div class="section" style="padding-top:0">
+  <div class="why">
+    <div><h3>💰 Sab To Sasta</h3><p>Market to 30% sasta, koi hidden charge nahi</p></div>
+    <div><h3>🚌 Safe & Comfort</h3><p>Volvo / Tempo Traveller + Experienced Driver</p></div>
+    <div><h3>📞 24x7 Support</h3><p>Trip te koi vi problem, ek call te hal</p></div>
+    <div><h3>⭐ 5000+ Trips Done</h3><p>Kharar, Chandigarh, Mohali ch sab to trusted</p></div>
+  </div>
+</div>
+
+<div class="section" id="reviews" style="padding-top:0">
+  <h2 class="sec-title">⭐ Customer Reviews</h2>
+  <div class="reviews" style="margin-top:20px">
+    <div class="rev"><b>⭐⭐⭐⭐⭐</b><p>"Bir Billing di trip bahut vadiya si. Harry ne sab arrange kitta, koi tension nahi. Highly recommended!"</p><b>- Gurpreet, Kharar</b></div>
+    <div class="rev"><b>⭐⭐⭐⭐⭐</b><p>"Rishikesh rafting layi gaye si dostan naal. Camping + bonfire full maza. Rate vi sasta."</p><b>- Simran, Chandigarh</b></div>
+    <div class="rev"><b>⭐⭐⭐⭐⭐</b><p>"Family naal Manali gaye, hotel te khana bahut vadiya. Bachhe bahut khush."</p><b>- Harpreet Singh, Mohali</b></div>
+  </div>
+</div>
+
+<div class="section" id="contact" style="text-align:center;padding-top:0">
+  <h2 class="sec-title">📍 Contact Harry</h2>
+  <p style="margin-top:12px;line-height:1.8"><b>Harry Tour & Travels</b><br>Kharar, Mohali, Punjab - Near Chandigarh<br>📞 <a href="tel:+917888942866">78889 42866</a> | 💬 WhatsApp: 78889 42866<br>🕐 Roz Khulla: 8 AM - 10 PM</p>
+  <a class="btn-w" style="display:inline-block;margin-top:12px" href="https://wa.me/917888942866?text=Hi%20Harry!%20Trip%20Bare%20Puchna%20Hai">💬 WhatsApp Te Gall Karo</a>
+</div>
+
+<footer>© 2026 Harry Tour & Travels • Kharar, Punjab • Call: 78889 42866</footer>
+<a class="float" href="https://wa.me/917888942866?text=Hi%20Harry!%20Trip%20Book%20Karni%20Hai">💬 WhatsApp</a>
+<a class="call-float" href="tel:+917888942866">📞 Call</a>
+
+<script>
+function sendBooking(){
+  var name=document.getElementById('name').value.trim();
+  var phone=document.getElementById('phone').value.trim();
+  var city=document.getElementById('city').value.trim();
+  var trip=document.getElementById('trip').value;
+  var date=document.getElementById('date').value;
+  var persons=document.getElementById('persons').value;
+  var type=document.getElementById('type').value;
+  var budget=document.getElementById('budget').value;
+  var msg=document.getElementById('msg').value.trim();
+  if(!name || !phone){ alert('⚠️ Naam te Mobile Number zaroor bharo!'); return; }
+  if(phone.length < 10){ alert('⚠️ Sahi Mobile Number bharo!'); return; }
+  var text = "*🔥 NEW BOOKING - HARRY TOUR & TRAVELS*%0A%0A"
+    + "👤 *Naam:* " + encodeURIComponent(name) + "%0A"
+    + "📱 *Mobile:* " + encodeURIComponent(phone) + "%0A"
+    + "📍 *City:* " + encodeURIComponent(city || 'Not Given') + "%0A"
+    + "🗺️ *Trip:* " + encodeURIComponent(trip) + "%0A"
+    + "📅 *Date:* " + encodeURIComponent(date || 'Flexible') + "%0A"
+    + "👥 *Bande:* " + encodeURIComponent(persons || 'Not Given') + "%0A"
+    + "👨‍👩‍👧 *Kinne Naal:* " + encodeURIComponent(type) + "%0A"
+    + "💰 *Budget:* " + encodeURIComponent(budget) + "%0A"
+    + "💬 *Message:* " + encodeURIComponent(msg || 'Koi message nahi') + "%0A%0A"
+    + "Please booking confirm karo 🙏";
+  window.open("https://wa.me/917888942866?text=" + text, "_blank");
+}
+</script>
+</body>
+  </html>
