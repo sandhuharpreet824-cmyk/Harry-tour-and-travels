@@ -10,10 +10,9 @@
 :root{--navy:#0A2352;--yellow:#FFC800;--green:#25D366}
 body{background:#F8FAFC}
 .topbar{background:var(--navy);color:#fff;display:flex;justify-content:space-between;padding:9px 5%;font-size:13px;font-weight:600;flex-wrap:wrap;gap:6px}
-.topbar span{color:var(--yellow)}
 .header{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;gap:15px;flex-wrap:wrap}
 .logo{line-height:.9}
-.logo h1{font-size:52px;font-weight:900;color:var(--navy);font-style:italic;letter-spacing:-1px}
+.logo h1{font-size:52px;font-weight:900;color:var(--navy);font-style:italic}
 .logo h1 i{color:var(--yellow);font-style:normal}
 .logo p{font-size:26px;font-weight:800;color:var(--navy);font-style:italic;margin-top:-4px}
 .logo p b{color:var(--yellow)}
@@ -44,4 +43,135 @@ nav a.active,nav a:hover{background:var(--yellow);color:#000}
 .booking{background:#fff;margin:30px 5%;border-radius:20px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
 .booking h2{font-size:24px;color:var(--navy)}.booking p{font-size:13px;color:#64748B;margin:5px 0 16px}
 .grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px}
-.grid input,.grid select,.grid textarea{width:100%;padding:13px;border:1.5px solid #E2E8F0;border-radius
+.grid input,.grid select,.grid textarea{width:100%;padding:13px;border:1.5px solid #E2E8F0;border-radius:12px;font-size:14px;background:#F8FAFC;outline:none}
+.full{grid-column:span 2}
+.book-btn{grid-column:span 4;background:var(--green);color:#fff;border:none;padding:15px;border-radius:12px;font-size:17px;font-weight:800;cursor:pointer}
+.section{padding:40px 5%}
+.sec-title{text-align:center;font-size:30px;color:var(--navy);font-weight:900}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:22px}
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.card img{width:100%;height:180px;object-fit:cover}
+.card-body{padding:16px}.card-body h3{color:var(--navy)}
+.price{color:#16A34A;font-weight:900;font-size:19px;margin:6px 0}
+.card-btns{display:flex;gap:8px;margin-top:10px}
+.card-btns button,.card-btns a{flex:1;padding:10px;border-radius:10px;font-weight:700;border:none;cursor:pointer;text-align:center;font-size:14px}
+.btn-dark{background:var(--navy);color:#fff}.btn-green{background:var(--green);color:#fff}
+.why{background:var(--navy);color:#fff;border-radius:20px;padding:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;text-align:center;margin:0 5% 40px}
+.why h3{font-size:18px}.why p{font-size:13px;opacity:.85}
+footer{background:var(--navy);color:#fff;text-align:center;padding:25px}
+.float{position:fixed;bottom:18px;right:18px;background:var(--green);color:#fff;padding:13px 18px;border-radius:50px;font-weight:800;border:none;cursor:pointer;z-index:999;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.call-float{position:fixed;bottom:18px;left:18px;background:var(--yellow);color:#000;padding:13px 18px;border-radius:50px;font-weight:800;border:none;cursor:pointer;z-index:999}
+@media(max-width:700px){.logo h1{font-size:38px}.hero h2{font-size:34px}.hero h3{font-size:22px}.head-services{display:none}.grid{grid-template-columns:1fr 1fr}.full,.book-btn{grid-column:span 2}.cars img{width:100%}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div>📍 Chandigarh, India</div><div>✉️ Book Your Trip Today</div><div>🚗 Travel More • Explore More</div></div>
+
+<div class="header">
+  <div class="logo"><h1>Harry<i> 🚗</i></h1><p>Tour and <b>Travel</b></p><small>YOUR JOURNEY OUR PRIORITY</small></div>
+  <div class="head-services">
+    <div class="hs"><div>🚗</div>Car Rentals</div>
+    <div class="hs"><div>📍</div>Outstation Trips</div>
+    <div class="hs"><div>🛫</div>Airport Transfers</div>
+  </div>
+  <button class="call-btn" onclick="callNow()">📞 Call Now</button>
+</div>
+
+<nav><a href="#" class="active">🏠 Home</a><a href="#services">👥 About Us</a><a href="#services">🚗 Our Services ⌄</a><a href="#booking">✉️ Contact Us</a></nav>
+
+<div class="hero">
+  <h2>Harry Tour and Travel</h2>
+  <h3>Your Journey &nbsp; Our Priority</h3>
+  <div class="checks"><span>Car Rentals</span><span>Outstation Trips</span><span>Airport Transfers</span></div>
+  <div class="hero-btns">
+    <button class="btn-yellow" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">🚗 Book Your Car →</button>
+    <button class="btn-white" onclick="callNow()">📞 Contact Us</button>
+  </div>
+  <div class="cars">
+    <div><img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800"><div class="car-label">DZIRE</div></div>
+    <div><img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800"><div class="car-label">ERTIGA</div></div>
+    <div><img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800"><div class="car-label">AURA</div></div>
+  </div>
+</div>
+
+<div class="pills">
+  <button class="pill" onclick="waSimple('Hi Harry! Outstation Trip Book Karni Hai')"><span>📍</span> Outstation Trips →</button>
+  <button class="pill" onclick="waSimple('Hi Harry! Airport Transfer Chahida Hai')"><span>🛫</span> Airport Transfers →</button>
+  <button class="pill" onclick="waSimple('Hi Harry! Local Travel Karna Hai')"><span>🚗</span> Local Travel →</button>
+  <button class="pill" onclick="waSimple('Hi Harry! Car Rental Chahida Hai')"><span>🚙</span> Car Rental →</button>
+  <button class="pill pill-green" onclick="waSimple('Hi Harry! Trip Book Karni Hai')"><span>💬</span> Chat on WhatsApp</button>
+</div>
+
+<div class="booking" id="booking">
+  <h2>📝 Book Your Car - 2 Minute Ch Booking</h2>
+  <p>Details bharo, sidha Harry de WhatsApp te pahunch jayegi. Number kahin show nahi hovega.</p>
+  <div class="grid">
+    <input id="name" placeholder="👤 Tuhada Naam *">
+    <input id="phone" placeholder="📱 Mobile Number *">
+    <select id="service">
+      <option>🚗 Car Rental - Dzire / Ertiga / Aura</option>
+      <option>📍 Outstation Trip</option>
+      <option>🛫 Airport Transfer</option>
+      <option>🚗 Local Travel</option>
+    </select>
+    <input type="date" id="date">
+    <input id="from" placeholder="📍 Kitho? Eg: Kharar">
+    <input id="to" placeholder="📍 Kithe Jana? Eg: Delhi / Manali">
+    <input type="number" id="persons" placeholder="👥 Kinne Bande?">
+    <select id="car"><option>Dzire (4 Seater)</option><option>Ertiga (7 Seater)</option><option>Aura (4 Seater)</option><option>Innova Crysta</option><option>Tempo Traveller</option><option>Bus - 20+ Seater</option></select>
+    <textarea id="msg" class="full" rows="2" placeholder="💬 Koi Message? Eg: Kal subah 6 baje chahidi hai..."></textarea>
+    <button class="book-btn" onclick="sendBooking()">✅ WhatsApp Te Booking Bhejo →</button>
+  </div>
+</div>
+
+<div class="section" id="services">
+  <h2 class="sec-title">🚗 Our Cars - Sasta Rate, Best Service</h2>
+  <div class="cards">
+    <div class="card"><img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800"><div class="card-body"><h3>🚗 Dzire - Outstation</h3><p style="font-size:13px;color:#64748B">4 Seater • AC • Chandigarh to Anywhere</p><div class="price">₹12 / KM <span style="font-size:12px;color:#888">+ Driver</span></div><div class="card-btns"><a class="btn-dark" href="#booking">Book Now</a><button class="btn-green" onclick="waSimple('Hi Harry! Dzire Book Karni Hai')">WhatsApp</button></div></div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800"><div class="card-body"><h3>🚙 Ertiga - Family Trip</h3><p style="font-size:13px;color:#64748B">7 Seater • Family / Group Best</p><div class="price">₹15 / KM <span style="font-size:12px;color:#888">+ Driver</span></div><div class="card-btns"><a class="btn-dark" href="#booking">Book Now</a><button class="btn-green" onclick="waSimple('Hi Harry! Ertiga Book Karni Hai')">WhatsApp</button></div></div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800"><div class="card-body"><h3>🚗 Aura - Comfort Ride</h3><p style="font-size:13px;color:#64748B">4 Seater • Airport / Local</p><div class="price">₹12 / KM <span style="font-size:12px;color:#888">+ Driver</span></div><div class="card-btns"><a class="btn-dark" href="#booking">Book Now</a><button class="btn-green" onclick="waSimple('Hi Harry! Aura Book Karni Hai')">WhatsApp</button></div></div></div>
+  </div>
+</div>
+
+<div class="why">
+  <div><h3>🚗 Car Rentals</h3><p>Dzire, Ertiga, Aura, Innova, Tempo</p></div>
+  <div><h3>📍 Outstation</h3><p>Delhi, Manali, Shimla, Amritsar, Jaipur</p></div>
+  <div><h3>🛫 Airport Transfer</h3><p>Chandigarh / Delhi Airport Pickup-Drop</p></div>
+  <div><h3>⭐ Trusted</h3><p>Kharar / Chandigarh ch 5000+ Trips</p></div>
+</div>
+
+<footer>© 2026 Harry Tour and Travel • Kharar, Chandigarh • Your Journey Our Priority</footer>
+<button class="float" onclick="waSimple('Hi Harry! Trip Book Karni Hai')">💬 WhatsApp</button>
+<button class="call-float" onclick="callNow()">📞 Call</button>
+
+<script>
+function getNum(){ return atob("OTE3ODg4OTQyODY2"); }
+function waSimple(msg){ window.open("https://wa.me/"+getNum()+"?text="+encodeURIComponent(msg),"_blank"); }
+function callNow(){ window.location.href="tel:+"+getNum(); }
+function sendBooking(){
+  var name=document.getElementById('name').value.trim();
+  var phone=document.getElementById('phone').value.trim();
+  var service=document.getElementById('service').value;
+  var date=document.getElementById('date').value;
+  var from=document.getElementById('from').value;
+  var to=document.getElementById('to').value;
+  var persons=document.getElementById('persons').value;
+  var car=document.getElementById('car').value;
+  var msg=document.getElementById('msg').value.trim();
+  if(!name || !phone){ alert('Naam te Mobile zaroor bharo!'); return; }
+  var text="*🔥 NEW BOOKING - HARRY TOUR & TRAVEL*%0A%0A"
+    +"👤 *Naam:* "+encodeURIComponent(name)+"%0A"
+    +"📱 *Mobile:* "+encodeURIComponent(phone)+"%0A"
+    +"🗺️ *Service:* "+encodeURIComponent(service)+"%0A"
+    +"🚗 *Car:* "+encodeURIComponent(car)+"%0A"
+    +"📅 *Date:* "+encodeURIComponent(date||'Flexible')+"%0A"
+    +"📍 *Kitho:* "+encodeURIComponent(from||'-')+"%0A"
+    +"📍 *Kithe:* "+encodeURIComponent(to||'-')+"%0A"
+    +"👥 *Bande:* "+encodeURIComponent(persons||'-')+"%0A"
+    +"💬 *Msg:* "+encodeURIComponent(msg||'Koi message nahi');
+  window.open("https://wa.me/"+getNum()+"?text="+text,"_blank");
+}
+</script>
+</body>
+</html>
